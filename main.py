@@ -21,7 +21,7 @@ def main():
         return render_template(
             'startbootstrap-4-col-portfolio/index.html', users = users)
 
-@app.route('/<id>/<title>/<content>/')
+@app.route('/hey/<id>/<title>/<content>/')
 def function(id,title,content):
     print(id)
     print(title)

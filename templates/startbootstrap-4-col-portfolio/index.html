@@ -54,7 +54,7 @@
               <a class="nav-link" href="#notesonly">View Your Notes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Reminder</a>
+              <a class="nav-link" href="#">Delete the Notes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://www.google.co.in/" target="_blank">Search the internet</a>
@@ -67,17 +67,17 @@
     <!-- Page Content -->
     <div class="container">
         <br><br><br>
-     <div class = "panel-collapse " id ="demo">
+     <div class = "" id ="demo">
 
          <form role="form" action="/" method="post">
                     <div class="form-group">
                         <label for="title">Title of your Note</label>
-                        <input class="form-control" name="title" placeholder="Enter a Title" >
+                        <input class="form-control" name="title" placeholder="Enter a Title"  required>
                         <small id="emailHelp" class="form-text text-muted">Please add a brief heading to your Note. It will make easy to find your Note.</small>
                     </div>
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea class="form-control" name="content" placeholder="Enter the Content"></textarea>
+                        <textarea class="form-control" name="content" placeholder="Enter the Content" required></textarea>
                     </div>
 
                     <button type="submit" name='submit' class="btn btn-default" >Submit</button>
@@ -97,7 +97,7 @@
               <div class="card-body">
                   <small  id="ID{{a[0]}}" >{{a[0]}}</small>
                 <h4 contenteditable="True" class="card-title text-primary" id="TID{{a[0]}}" onfocusout = "myFunction('ID{{a[0]}}', 'TID{{a[0]}}', 'CID{{a[0]}}',)" >{{a[1]}}</h4>
-                <p contenteditable="True" class="card-text" id="CID{{a[0]}}" onfocusout = "myFunction('ID{{a[0]}}')">{{a[2]}}</p>
+                <p contenteditable="True" class="card-text" id="CID{{a[0]}}" onfocusout = "myFunction('ID{{a[0]}}', 'TID{{a[0]}}', 'CID{{a[0]}}',)">{{a[2]}}</p>
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@ function myFunction(x, y, z) {
     var t1 = document.getElementById(x).innerHTML;
     var t2 = document.getElementById(y).innerHTML;
     var t3 = document.getElementById(z).innerHTML;
-    window.location.href = "/"+t1+"/"+t2+"/"+t3+"/";
+    window.location.href = "/hey/"+t1+"/"+t2+"/"+t3+"/";
 }
 </script>
   </body>
