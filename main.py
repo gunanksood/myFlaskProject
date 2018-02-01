@@ -21,10 +21,14 @@ def main():
         return render_template(
             'startbootstrap-4-col-portfolio/index.html', users = users)
 
-@app.route('/id')
-def function(authors_last_name):
-    return render_template('routing/author.html',
-                           author=AUTHORS_INFO[authors_last_name])
+@app.route('/<id>/<title>/<content>/')
+def function(id,title,content):
+    print(id)
+    print(title)
+    print(content)
+    dbHandler.updateTable(id,title,content)
+    users = dbHandler.retrieveTable()
+    return render_template('startbootstrap-4-col-portfolio/index.html', users=users)
 
 if __name__ == '__main__':
     app.run(debug = True)

@@ -15,10 +15,9 @@ def retrieveTable():
     con.close()
     return data
 
-def updateTable():
+def updateTable(Id, Title, content):
     con = sql.connect("content_table.db")
     cur = con.cursor()
-    cur.execute("")
-    data = cur.fetchall()
+    cur.execute("UPDATE content_table SET title = Title, content_text = content WHERE id = Id")
+    con.commit()
     con.close()
-    return data
