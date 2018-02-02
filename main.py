@@ -30,5 +30,12 @@ def function(id,title,content):
     users = dbHandler.retrieveTable()
     return render_template('startbootstrap-4-col-portfolio/index.html', users=users)
 
+@app.route('/ide/<id>/')
+def function1(id):
+    print(id)
+    dbHandler.deleteData(id)
+    users = dbHandler.retrieveTable()
+    return render_template('startbootstrap-4-col-portfolio/index.html', users=users)
+
 if __name__ == '__main__':
     app.run(debug = True)

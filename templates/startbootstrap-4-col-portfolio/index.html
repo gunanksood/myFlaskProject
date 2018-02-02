@@ -54,7 +54,7 @@
               <a class="nav-link" href="#notesonly">View Your Notes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Delete the Notes</a>
+              <a class="nav-link" href="#notesonly">Delete the Notes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://www.google.co.in/" target="_blank">Search the internet</a>
@@ -95,11 +95,16 @@
           <div   class="col-lg-3 col-md-4 col-sm-6 portfolio-item " style="user-select : all"  >
             <div class="card h-100">
               <div class="card-body">
-                  <small  id="ID{{a[0]}}" style="display:none" >{{a[0]}}</small>
+                  <small  id="ID{{a[0]}}"  >{{a[0]}}</small>
                 <h4 contenteditable="True" class="card-title text-primary" id="TID{{a[0]}}" onfocusout = "myFunction('ID{{a[0]}}', 'TID{{a[0]}}', 'CID{{a[0]}}',)"  >{{a[1]}}</h4>
                 <p contenteditable="True" class="card-text" id="CID{{a[0]}}" onfocusout = "myFunction('ID{{a[0]}}', 'TID{{a[0]}}', 'CID{{a[0]}}',)">{{a[2]}}</p>
+                  <a onclick="func2('ID{{a[0]}}')" class="btn btn-warning btn-sm position-relative bottom-left" > <small>Delete</small></a>
               </div>
+                 <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
             </div>
+
           </div>
         {% endfor %}
 
@@ -152,22 +157,30 @@
     <!-- /.container -->
 
     <!-- Footer -->
- <!--   <div class="py-5 bg-dark footer fixed-bottom" >
+      <div class="py-5 bg-dark footer fixed-bottom" >
       <div class="container">
+          <a href="#"><i class="fa fa-facebook"></i></a>
           <p class="m-0 text-center text-white">Copyright &copy; Gunank Sood</p>
-          </div>   -->
+          </div>
       <!-- /.container -->
-
+      </div>
 <br> <br> <br> <br> <br>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
-function myFunction(x, y, z) {
+function myFunction(x, y, z)
+{
     var t1 = document.getElementById(x).innerHTML;
     var t2 = document.getElementById(y).innerHTML;
     var t3 = document.getElementById(z).innerHTML;
     window.location.href = "/hey/"+t1+"/"+t2+"/"+t3+"/";
+}
+
+function func2(x)
+{
+    var val = document.getElementById(x).innerHTML;
+    window.location.href = "/ide/"+val+"/";
 }
 </script>
   </body>
